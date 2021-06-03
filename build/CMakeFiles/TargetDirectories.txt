@@ -1,3 +1,3 @@
-C:/AiP/game_project/build/CMakeFiles/tennis.dir
-C:/AiP/game_project/build/CMakeFiles/ALL_BUILD.dir
-C:/AiP/game_project/build/CMakeFiles/ZERO_CHECK.dir
+C:/game_tennis/build/CMakeFiles/tennis.dir
+C:/game_tennis/build/CMakeFiles/ALL_BUILD.dir
+C:/game_tennis/build/CMakeFiles/ZERO_CHECK.dir

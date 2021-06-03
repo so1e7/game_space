@@ -2,13 +2,13 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
-      <FullPath>C:\AiP\game_project\build\x64\Release\ZERO_CHECK</FullPath>
+      <FullPath>C:\game_tennis\build\x64\Release\ZERO_CHECK</FullPath>
     </ProjectOutput>
     <ProjectOutput>
-      <FullPath>C:\AiP\game_project\build\bin\tennis.exe</FullPath>
+      <FullPath>C:\game_tennis\build\bin\tennis.exe</FullPath>
     </ProjectOutput>
     <ProjectOutput>
-      <FullPath>C:\AiP\game_project\build\x64\Release\ALL_BUILD</FullPath>
+      <FullPath>C:\game_tennis\build\x64\Release\ALL_BUILD</FullPath>
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles />

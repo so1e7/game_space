@@ -1,6 +1,6 @@
-^C:\AIP\GAME_PROJECT\CMAKELISTS.TXT
+^C:\GAME_TENNIS\CMAKELISTS.TXT
 setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SC:/AiP/game_project -BC:/AiP/game_project/build --check-stamp-file C:/AiP/game_project/build/CMakeFiles/generate.stamp
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/game_tennis -BC:/game_tennis/build --check-stamp-file C:/game_tennis/build/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone

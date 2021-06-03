@@ -1,16 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="C:\AiP\game_project\main.cpp">
+    <ClCompile Include="C:\game_tennis\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="C:\AiP\game_project\CMakeLists.txt" />
+    <CustomBuild Include="C:\game_tennis\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{9397BCC5-9674-3C3F-830C-9BDE60E51D77}</UniqueIdentifier>
+      <UniqueIdentifier>{1133A19E-97DF-38FD-A170-38ED42F54DF1}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
