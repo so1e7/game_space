@@ -15,7 +15,7 @@
 `conan install . -if build` 
 
 запустить cmake \
-`cmake -B build -S .` \
+`cmake -G "Visual Studio 16 2019" -B build -S .` \
 `cmake --build build --config Release` \
 `start ./build/bin/tennis.exe`
 
