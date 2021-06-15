@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <CustomBuild Include="C:\game_tennis\build\CMakeFiles\af2b3bbb4c8ea9838b8d550804a7cb47\generate.stamp.rule">
+    <CustomBuild Include="C:\game_space\build\CMakeFiles\d710285becd0d936c3c1d93b19ab6497\generate.stamp.rule">
       <Filter>CMake Rules</Filter>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="CMake Rules">
-      <UniqueIdentifier>{9A1E98FD-CCDF-346D-8EC1-748FA11293B3}</UniqueIdentifier>
+      <UniqueIdentifier>{1F5FF4B0-C83B-3196-B578-2AD3DA2FD733}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

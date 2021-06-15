@@ -17,5 +17,5 @@
 запустить cmake \
 `cmake -G "Visual Studio 16 2019" -B build -S .` \
 `cmake --build build --config Release` \
-`start ./build/bin/tennis.exe`
+`start ./build/bin/space.exe`
 

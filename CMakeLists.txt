@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.5)
 
-set(PROJECT_NAME tennis)
+set(PROJECT_NAME space)
 project(${PROJECT_NAME})
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
@@ -16,6 +16,6 @@ add_executable(${PROJECT_NAME} main.cpp)
 
 target_link_libraries(${PROJECT_NAME} ${CONAN_LIBS})
 
-file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/res 
+file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/res
      DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/bin
      )

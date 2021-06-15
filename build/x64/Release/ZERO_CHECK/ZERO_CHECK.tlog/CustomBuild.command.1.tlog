@@ -1,6 +1,6 @@
-^C:\GAME_TENNIS\BUILD\CMAKEFILES\AF2B3BBB4C8EA9838B8D550804A7CB47\GENERATE.STAMP.RULE
+^C:\GAME_SPACE\BUILD\CMAKEFILES\D710285BECD0D936C3C1D93B19AB6497\GENERATE.STAMP.RULE
 setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SC:/game_tennis -BC:/game_tennis/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/game_tennis/build/tennis.sln
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/game_space -BC:/game_space/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/game_space/build/space.sln
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
