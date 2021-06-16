@@ -9,8 +9,6 @@
 #define PROBEL_PATH "res/probel.png"
 #define NUMBER_PATH "res/number.png"
 #define SCORE_PATH "res/score.png"
-#define LIFE_PATH "res/life.png"
-#define GAMEOVER_PATH "res/gameover.png"
 
 #define MENU_PATH "res/menu.jpg"
 #define START_GAME_PATH "res/start.png"

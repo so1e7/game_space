@@ -1,25 +1,25 @@
-#include "conf.h" 
+#include "conf.h"
 #include <SFML/Graphics.hpp>
 #include <time.h>
 
 using namespace sf;
 
 int main()
-{ 
+{
     srand(time(0)); //Генерация случайного числа
     RenderWindow window(VideoMode(WINDOW_WIDTH, WINDOW_HEIGHT), "Space");
 
     Texture fon;
     fon.loadFromFile(BACKGROUND_PATH);
     Sprite background(fon);
-    
+
     //Игрок
     Texture p;
     p.loadFromFile(PLAYER_PATH);
     Sprite player(p);
     player.setTextureRect(IntRect(0, 0, 120, 90));
     player.setPosition(500, 600);
-    
+
     //Снаряд
     Texture bul;
     bul.loadFromFile(BULLET_PATH);
@@ -36,20 +36,37 @@ int main()
 
     Texture en;
     en.loadFromFile(ENEMY_PATH);
-    Sprite enemy[5];
-    int en_y[5] = {0};
-    for (int i = 0; i < 5; i++) {
+    Sprite enemy[6];
+    int en_y[6] = {0}, e_x, e_y;
+    for (int i = 0; i < 6; i++)
+    {
         enemy[i].setScale(0.9f, 0.9f);
         enemy[i].setTexture(en);
         en_y[i] = rand() % 5;
-        enemy[i].setPosition(230 * i, -150 - 100 * en_y[i]);
+
+        e_x = 220 * i;
+        e_y = -150 - 100 * en_y[i];
+        enemy[i].setPosition(e_x, e_y);
     }
 
-    Texture lf;
-    lf.loadFromFile(LIFE_PATH);
-    Sprite life(lf);
-    life.setPosition(950, 5);
-    life.setScale(0.4f, 0.4f);
+    Texture scr;
+    scr.loadFromFile(SCORE_PATH);
+    Sprite score(scr);
+    score.setPosition(10, 5);
+    score.setScale(0.4f, 0.4f);
+
+    Texture numb;
+    numb.loadFromFile(NUMBER_PATH);
+    Sprite number[3];
+    int n_k[3] = {0};
+    for (int i = 0; i < 3; i++)
+    {
+        number[i].setScale(0.45f, 0.45f);
+
+        number[i].setTexture(numb);
+        number[i].setPosition(130 + 25 * i, 5);
+        number[i].setTextureRect(IntRect(0, 0, 50, 79));
+    }
 
     bool play = false;
 
@@ -59,60 +76,102 @@ int main()
         Vector2f pl = player.getPosition();
 
         Event event;
-        while (window.pollEvent(event)) {
+        while (window.pollEvent(event))
+        {
             if (event.type == Event::Closed)
                 window.close();
-            
+
             if (event.type == Event::KeyPressed)
-                if (event.key.code == Keyboard::Space) {
+                if (event.key.code == Keyboard::Space)
+                {
                     if (!play && !s_bul)
                         play = true;
-                    else if (play && !s_bul) {
+                    else if (play && !s_bul)
+                    {
                         bullet.setPosition(pl.x + 52, pl.y - 50);
                         s_bul = true;
                     }
                 }
         }
-        
-        if (play) {
+
+        if (play)
+        {
             if (Keyboard::isKeyPressed(Keyboard::Right))
                 if (pl.x < 1080)
-                    player.move(0.10, 0);
+                    player.move(0.15f, 0);
             if (Keyboard::isKeyPressed(Keyboard::Left))
                 if (pl.x > 0)
-                    player.move(-0.10, 0);
+                    player.move(-0.15f, 0);
             if (Keyboard::isKeyPressed(Keyboard::Up))
                 if (pl.y > 5)
-                    player.move(0, -0.10);
+                    player.move(0, -0.15f);
             if (Keyboard::isKeyPressed(Keyboard::Down))
                 if (pl.y < 695)
-                    player.move(0, 0.10);
-            
+                    player.move(0, 0.15f);
+
             Vector2f pa = bullet.getPosition();
-                if (s_bul) {
-                    bullet.move(0, -0.5);
-                    if(pa.y < -100)
-                        s_bul = false;
-                }
-            
-            Vector2f em[5];
-            for (int i = 0; i < 5; i++) {
+            if (s_bul)
+            {
+                bullet.move(0, -0.7f);
+                if (pa.y < -100)
+                    s_bul = false;
+            }
+
+            Vector2f em[6];
+            for (int i = 0; i < 6; i++)
+            {
                 enemy[i].move(0, 0.05);
                 em[i] = enemy[i].getPosition();
 
-                if (em[i].y > 850) {
+                if (em[i].y > 850)
+                {
                     en_y[i] = rand() % 5;
-                    enemy[i].setPosition(175 * i, -150 - 100 * en_y[i]);
+
+                    e_x = 220 * i;
+                    e_y = -150 - 100 * en_y[i];
+                    enemy[i].setPosition(e_x, e_y);
                 }
 
-                if (bullet.getGlobalBounds().intersects(enemy[i].getGlobalBounds())) {
+                if (player.getGlobalBounds().intersects(enemy[i].getGlobalBounds()))
+                {
+                    e_x = 220 * i;
+                    e_y = -150 - 100 * en_y[i];
+                    enemy[i].setPosition(e_x, e_y);
+
+                    n_k[2]--;
+                }
+
+                if (bullet.getGlobalBounds().intersects(enemy[i].getGlobalBounds()))
+                {
                     en_y[i] = rand() % 5;
-                    enemy[i].setPosition(175 * i, -150 - 100 * en_y[i]);
+                    e_x = 220 * i;
+                    e_y = -150 - 100 * en_y[i];
+                    enemy[i].setPosition(e_x, e_y);
 
                     bullet.setPosition(-100, -100);
+
+                    n_k[2] += 2;
                 }
             }
         }
+
+        if (n_k[2] > 9)
+        {
+            n_k[2] -= 10;
+
+            n_k[1]++;
+            if (n_k[1] > 9)
+            {
+                n_k[1] -= 10;
+
+                n_k[0]++;
+                if (n_k[0] > 9)
+                    n_k[0] -= 10;
+                number[0].setTextureRect(IntRect(n_k[0] * 50, 0, 50, 79));
+            }
+            number[1].setTextureRect(IntRect(n_k[1] * 50, 0, 50, 79));
+        }
+        number[2].setTextureRect(IntRect(n_k[2] * 50, 0, 50, 79));
 
         window.clear(Color::White);
 
@@ -121,12 +180,17 @@ int main()
 
         window.draw(bullet);
 
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < 6; i++)
             window.draw(enemy[i]);
 
-        if (play) {
-            window.draw(life);
-        } else if (!play)
+        if (play)
+        {
+            window.draw(score);
+
+            for (int i = 0; i < 3; i++)
+                window.draw(number[i]);
+        }
+        else if (!play)
             window.draw(probel);
 
         window.display();
