@@ -13,6 +13,10 @@ int main()
     fon.loadFromFile(BACKGROUND_PATH);
     Sprite background(fon);
 
+    Texture t1;	
+	t1.loadFromFile(MENU_PATH);
+	Sprite menu_background(t1);
+
     //Игрок
     Texture p;
     p.loadFromFile(PLAYER_PATH);
@@ -190,8 +194,10 @@ int main()
             for (int i = 0; i < 3; i++)
                 window.draw(number[i]);
         }
-        else if (!play)
+        else if (!play){
+            window.draw(menu_background);
             window.draw(probel);
+        }
 
         window.display();
     }

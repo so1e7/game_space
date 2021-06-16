@@ -11,8 +11,6 @@
 #define SCORE_PATH "res/score.png"
 
 #define MENU_PATH "res/menu.jpg"
-#define START_GAME_PATH "res/start.png"
-#define EXIT_GAME_PATH "res/exit.png"
 
 #define WINDOW_HEIGHT 790
 #define WINDOW_WIDTH 1200
