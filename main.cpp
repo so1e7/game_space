@@ -1,4 +1,3 @@
-#include "conf.h"
 #include <SFML/Graphics.hpp>
 #include <time.h>
 
@@ -8,28 +7,28 @@ using namespace sf;
 int main()
 {
     srand(time(0)); 
-    RenderWindow window(VideoMode(WINDOW_WIDTH, WINDOW_HEIGHT), "Space");
+    RenderWindow window(VideoMode(1200, 790), "Space");
 
     //Объявляем текстуру и спрайт для игрового фона
     Texture fon;
-    fon.loadFromFile(BACKGROUND_PATH); //Переменная, в которой содерижтся изображение фона игры
+    fon.loadFromFile("res/background.png"); //Переменная, в которой содерижтся изображение фона игры
     Sprite background(fon);
 
     //Объявляем текстуру и спрайт для фона меню
     Texture t1;	
-	t1.loadFromFile(MENU_PATH); //Переменная, в которой содерижтся изображение фона "игрового меню"
+	t1.loadFromFile("res/menu.jpg"); //Переменная, в которой содерижтся изображение фона "игрового меню"
 	Sprite menu_background(t1);
 
     //Объявляем текстуру и спрайт для игрока
     Texture p;
-    p.loadFromFile(PLAYER_PATH); //Переменная, в которой содерижтся изображение игрока(космического корабля)
+    p.loadFromFile("res/player.png"); //Переменная, в которой содерижтся изображение игрока(космического корабля)
     Sprite player(p);
     player.setTextureRect(IntRect(0, 0, 120, 90));
     player.setPosition(500, 600); //Устанавливаем начальную позицию корабля
 
     //Объявляем текстуру и спрайт для снаряда
     Texture bul;
-    bul.loadFromFile(BULLET_PATH);//Переменная, в которой содерижтся изображение снаряда
+    bul.loadFromFile("res/bullet.png");//Переменная, в которой содерижтся изображение снаряда
     Sprite bullet(bul);
     bullet.setPosition(-100, -100); //Устанавливаем начальную позицию снаряда
     bool s_bul = false; //коэффициент, который отвечает, когда будет появляться снаряд
@@ -37,13 +36,13 @@ int main()
 
     //Объявляем текстуру и спрайт для кнопки, при помощи которой мы сможем начать игру
     Texture sp;
-    sp.loadFromFile(PROBEL_PATH); 
+    sp.loadFromFile("res/probel.png"); 
     Sprite probel(sp);
     probel.setPosition(200, 300); //Устанавливаем расположение надписи "Нажмите на пробел"
 
     //Объявляем текстуру и спрайт для камней
     Texture en;
-    en.loadFromFile(ENEMY_PATH);//Переменная, в которой содерижтся изображение камня
+    en.loadFromFile("res/enemy.png");//Переменная, в которой содерижтся изображение камня
     Sprite enemy[6];
     int en_y[6] = {0}, e_x, e_y;
     for (int i = 0; i < 6; i++)
@@ -59,14 +58,14 @@ int main()
 
     //Объявляем текстуру и спрайт для надписи "Очки"
     Texture scr;
-    scr.loadFromFile(SCORE_PATH);
+    scr.loadFromFile("res/score.png");
     Sprite score(scr);
     score.setPosition(10, 5); //Устанавливаем расположение надписи "Очки"
     score.setScale(0.4f, 0.4f);
 
     //Объявляем текстуру и спрайт для цирф, которые используются для выведения счета
     Texture numb;
-    numb.loadFromFile(NUMBER_PATH);
+    numb.loadFromFile("res/number.png");
     Sprite number[3];
     int n_k[3] = {0};
     for (int i = 0; i < 3; i++)
