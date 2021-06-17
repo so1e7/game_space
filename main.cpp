@@ -57,8 +57,7 @@ void handle_keyboard(Sprite &player, Vector2f &pl) {
  * @param en_y координата Y камня
  * @param n_k позиции цифр
  */
-void draw_stones(std::vector<Sprite> &enemy, Sprite &player, Sprite &bullet,
-                 int *en_y, int *n_k) {
+void draw_stones(std::vector<Sprite> &enemy, Sprite &player, Sprite &bullet, int *en_y, int *n_k) {
     int e_x, e_y;
 
     Vector2f em[STONES_NUMBER];
@@ -96,54 +95,45 @@ void draw_stones(std::vector<Sprite> &enemy, Sprite &player, Sprite &bullet,
     }
 }
 
-//Основная функция приложения, в которой описана сама игра и взаимодействие
-//между игроком и камнями
+//Основная функция приложения, в которой описана сама игра и взаимодействие между игроком и камнями
 int main() {
     srand(time(0));
     RenderWindow window(VideoMode(1200, 790), "Space");
 
     //Объявляем текстуру и спрайт для игрового фона
     Texture fon;
-    fon.loadFromFile("res/background.png"); //Переменная, в которой содерижтся
-                                            //изображение фона игры
+    fon.loadFromFile("res/background.png"); //Переменная, в которой содерижтся изображение фона игры
     Sprite background(fon);
 
     //Объявляем текстуру и спрайт для фона меню
     Texture t1;
-    t1.loadFromFile("res/menu.jpg"); //Переменная, в которой содерижтся
-                                     //изображение фона "игрового меню"
+    t1.loadFromFile("res/menu.jpg"); //Переменная, в которой содерижтся изображение фона "игрового меню"
     Sprite menu_background(t1);
 
     //Объявляем текстуру и спрайт для игрока
     Texture p;
-    p.loadFromFile("res/player.png"); //Переменная, в которой содерижтся
-                                      //изображение игрока(космического корабля)
+    p.loadFromFile("res/player.png"); //Переменная, в которой содерижтся изображение игрока(космического корабля)
     Sprite player(p);
     player.setTextureRect(IntRect(0, 0, 120, 90));
     player.setPosition(500, 600); //Устанавливаем начальную позицию корабля
 
     //Объявляем текстуру и спрайт для снаряда
     Texture bul;
-    bul.loadFromFile("res/bullet.png"); //Переменная, в которой содерижтся
-                                        //изображение снаряда
+    bul.loadFromFile("res/bullet.png"); //Переменная, в которой содерижтся изображение снаряда
     Sprite bullet(bul);
     bullet.setPosition(-100, -100); //Устанавливаем начальную позицию снаряда
-    bool s_bul =
-        false; //коэффициент, который отвечает, когда будет появляться снаряд
+    bool s_bul = false; //коэффициент, который отвечает, когда будет появляться снаряд
     bullet.setScale(0.8f, 0.8f);
 
-    //Объявляем текстуру и спрайт для кнопки, при помощи которой мы сможем
-    //начать игру
+    //Объявляем текстуру и спрайт для кнопки, при помощи которой мы сможем начать игру
     Texture sp;
     sp.loadFromFile("res/probel.png");
     Sprite probel(sp);
-    probel.setPosition(
-        200, 300); //Устанавливаем расположение надписи "Нажмите на пробел"
+    probel.setPosition(200, 300); //Устанавливаем расположение надписи "Нажмите на пробел"
 
     //Объявляем текстуру и спрайт для камней
     Texture en;
-    en.loadFromFile(
-        "res/enemy.png"); //Переменная, в которой содерижтся изображение камня
+    en.loadFromFile("res/enemy.png"); //Переменная, в которой содерижтся изображение камня
     std::vector<Sprite> enemy(STONES_NUMBER);
     int en_y[STONES_NUMBER] = {0}, e_x, e_y;
     for (int i = 0; i < STONES_NUMBER; i++) {
@@ -163,8 +153,7 @@ int main() {
     score.setPosition(10, 5); //Устанавливаем расположение надписи "Очки"
     score.setScale(0.4f, 0.4f);
 
-    //Объявляем текстуру и спрайт для цирф, которые используются для выведения
-    //счета
+    //Объявляем текстуру и спрайт для цирф, которые используются для выведения счета
     Texture numb;
     numb.loadFromFile("res/number.png");
     Sprite number[3];
