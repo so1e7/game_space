@@ -12,24 +12,24 @@ int main()
 
     //Объявляем текстуру и спрайт для игрового фона
     Texture fon;
-    fon.loadFromFile(BACKGROUND_PATH); //Загружаем фон игры в текстуру
+    fon.loadFromFile(BACKGROUND_PATH); //Переменная, в которой содерижтся изображение фона игры
     Sprite background(fon);
 
     //Объявляем текстуру и спрайт для фона меню
     Texture t1;	
-	t1.loadFromFile(MENU_PATH); //Загружаем фон игрового меню в текстуру
+	t1.loadFromFile(MENU_PATH); //Переменная, в которой содерижтся изображение фона "игрового меню"
 	Sprite menu_background(t1);
 
     //Объявляем текстуру и спрайт для игрока
     Texture p;
-    p.loadFromFile(PLAYER_PATH); //Загружаем картинку игрока(космического кораблся) в текстуру
+    p.loadFromFile(PLAYER_PATH); //Переменная, в которой содерижтся изображение игрока(космического корабля)
     Sprite player(p);
     player.setTextureRect(IntRect(0, 0, 120, 90));
     player.setPosition(500, 600); //Устанавливаем начальную позицию корабля
 
     //Объявляем текстуру и спрайт для снаряда
     Texture bul;
-    bul.loadFromFile(BULLET_PATH);//Загружаем картинку снаряда в текстуру
+    bul.loadFromFile(BULLET_PATH);//Переменная, в которой содерижтся изображение снаряда
     Sprite bullet(bul);
     bullet.setPosition(-100, -100); //Устанавливаем начальную позицию снаряда
     bool s_bul = false; //коэффициент, который отвечает, когда будет появляться снаряд
@@ -43,7 +43,7 @@ int main()
 
     //Объявляем текстуру и спрайт для камней
     Texture en;
-    en.loadFromFile(ENEMY_PATH);//Загружаем картинку камня в текстуру
+    en.loadFromFile(ENEMY_PATH);//Переменная, в которой содерижтся изображение камня
     Sprite enemy[6];
     int en_y[6] = {0}, e_x, e_y;
     for (int i = 0; i < 6; i++)
@@ -78,7 +78,7 @@ int main()
         number[i].setTextureRect(IntRect(0, 0, 50, 79));
     }
 
-    bool play = false;
+    bool play = false; //Переменная, отвечающая за начало игры
 
     //Главный цикл приложения. Выполняется, пока открыто окно.
     while (window.isOpen())
