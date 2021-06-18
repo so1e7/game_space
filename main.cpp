@@ -179,6 +179,7 @@ int main() {
                 window.close();
 
             if (event.type == Event::KeyPressed)
+                //////Принцип работы стрельбы был взят на сайте kychka-pc.ru
                 if (event.key.code == Keyboard::Space) {
                     if (!play && !s_bul)
                         play = true;
@@ -187,6 +188,7 @@ int main() {
                         s_bul = true;
                     }
                 }
+                ///Конец взаимствования
         }
 
         //Условие, отвечающее за работу игры
@@ -213,7 +215,7 @@ int main() {
         window.draw(bullet); //Отрисовывка снаряда
 
         //Цикл, который отвечает за отрисовку камней
-        for (int i = 0; i < 6; i++)
+        for (int i = 0; i < STONES_NUMBER; i++)
             window.draw(enemy[i]);
 
         if (play) {
